@@ -22,4 +22,11 @@ RUN \
   apt-get install sbt && \
   sbt sbtVersion
 
+RUN apt-get install -y mysql-server
+
 WORKDIR /home
+RUN mkdir ebusiness && \
+    cd ebusiness && \
+    echo "libraryDependencies += \"com.typesafe.slick\" %% \"slick\" % \"3.2.1\"" >> build.sbt && \
+    echo "libraryDependencies += \"com.typesafe.play\" %% \"play\" % \"2.6.12\"" >> build.sbt && \
+    sbt update
