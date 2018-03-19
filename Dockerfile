@@ -22,11 +22,14 @@ RUN \
   apt-get install sbt && \
   sbt sbtVersion
 
-RUN apt-get install -y mysql-server
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server mysql-client
 
 WORKDIR /home
 RUN mkdir ebusiness && \
-    cd ebusiness && \
+    cd ebusiness && \ 
     echo "libraryDependencies += \"com.typesafe.slick\" %% \"slick\" % \"3.2.1\"" >> build.sbt && \
     echo "libraryDependencies += \"com.typesafe.play\" %% \"play\" % \"2.6.12\"" >> build.sbt && \
+    echo "libraryDependencies += \"mysql\" % \"mysql-connector-java\" % \"6.0.6\"" >> build.sbt && \
     sbt update
+
+CMD sbt console
