@@ -1,9 +1,13 @@
-FROM openjdk:8u151
+FROM debian:stretch-slim
 
 ENV SCALA_VERSION 2.12.4
 ENV SBT_VERSION 1.1.1
 
-RUN touch /usr/lib/jvm/java-8-openjdk-amd64/release
+RUN apt-get update
+
+RUN mkdir /usr/share/man/man1
+RUN apt-get install -y openjdk-8-jdk 
+RUN apt-get install -y curl
 
 RUN \
   curl -fsL https://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C /root/ && \
@@ -18,6 +22,4 @@ RUN \
   apt-get install sbt && \
   sbt sbtVersion
 
-WORKDIR /root
-
-RUN sbt compile
+WORKDIR /home
