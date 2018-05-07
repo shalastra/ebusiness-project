@@ -1,35 +1,25 @@
 FROM debian:stretch-slim
 
-ENV SCALA_VERSION 2.12.4
-ENV SBT_VERSION 1.1.1
+RUN apt-get update
+RUN apt-get install -y software-properties-common gnupg2 apt-transport-https apt-utils
+    
+RUN echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+RUN add-apt-repository -y ppa:webupd8team/java
 
 RUN apt-get update
+RUN mkdir -p /usr/share/man/man1
+RUN apt-get install -y --allow-unauthenticated oracle-java8-installer
+RUN apt-get install oracle-java8-set-default
+RUN apt-get install -y scala sbt
 
-RUN mkdir /usr/share/man/man1
-RUN apt-get install -y openjdk-8-jdk 
-RUN apt-get install -y curl
+EXPOSE 9000
 
-RUN \
-  curl -fsL https://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C /root/ && \
-  echo >> /root/.bashrc && \
-  echo "export PATH=~/scala-$SCALA_VERSION/bin:$PATH" >> /root/.bashrc
+RUN mkdir /home/shared
+VOLUME ["/home/shared/"]
 
-RUN \
-  curl -L -o sbt-$SBT_VERSION.deb https://dl.bintray.com/sbt/debian/sbt-$SBT_VERSION.deb && \
-  dpkg -i sbt-$SBT_VERSION.deb && \
-  rm sbt-$SBT_VERSION.deb && \
-  apt-get update && \
-  apt-get install sbt && \
-  sbt sbtVersion
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server mysql-client
-
-WORKDIR /home
-RUN mkdir ebusiness && \
-    cd ebusiness && \ 
-    echo "libraryDependencies += \"com.typesafe.slick\" %% \"slick\" % \"3.2.1\"" >> build.sbt && \
-    echo "libraryDependencies += \"com.typesafe.play\" %% \"play\" % \"2.6.12\"" >> build.sbt && \
-    echo "libraryDependencies += \"mysql\" % \"mysql-connector-java\" % \"6.0.6\"" >> build.sbt && \
-    sbt update
-
-CMD sbt console
+WORKDIR /home/
+RUN git clone https://github.com/playframework/play-scala-slick-example
+WORKDIR /home/play-scala-slick-example/
+CMD sbt run
