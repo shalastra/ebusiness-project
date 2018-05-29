@@ -2,7 +2,7 @@ package models
 
 import play.api.libs.json.Json
 
-case class Review(id: Long, description: String, productId: Long)
+case class Review(id: Int, grade: Int, comment: String, productId: Int)
 
 object Review {
   implicit val reviewJSON = Json.format[Review]

@@ -224,9 +224,6 @@
           <root url="jar://$USER_HOME$/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/zinc-ivy-integration_2.12-1.1.3.jar!/" />
           <root url="jar://$USER_HOME$/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/zinc-persist_2.12-1.1.3.jar!/" />
           <root url="jar://$USER_HOME$/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.2/zinc_2.12-1.1.3.jar!/" />
-          <root url="jar:///tmp/sbt-global-pluginstub/boot/scala-2.12.4/lib/scala-compiler.jar!/" />
-          <root url="jar:///tmp/sbt-global-pluginstub/boot/scala-2.12.4/lib/scala-library.jar!/" />
-          <root url="jar:///tmp/sbt-global-pluginstub/boot/scala-2.12.4/lib/scala-reflect.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
