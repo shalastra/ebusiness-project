@@ -2,7 +2,7 @@ package models
 
 import play.api.libs.json.Json
 
-case class Cart(id: Int, orderId: Int)
+case class Cart(id: Long, orderId: Long)
 
 object Cart {
   implicit val cartJSON = Json.format[Cart]
