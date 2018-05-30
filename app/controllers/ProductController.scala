@@ -2,6 +2,8 @@ package controllers
 
 import javax.inject._
 import models._
+import models.category.{Category, CategoryRepository}
+import models.product.ProductRepository
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.data.validation.Constraints._
