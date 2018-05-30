@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd837394-29c1-4944-a5ca-302a69bbb349" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/order/OrderTable.scala" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/orderdetails/OrderDetailsTable.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/orderdetails/OrderDetailsRepository.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/payment/PaymentRepository.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/payment/PaymentTable.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/review/ReviewRepository.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/review/ReviewTable.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/user/UserRepository.scala" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/user/UserTable.scala" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/models/cart/CartRepository.scala" afterPath="$PROJECT_DIR$/app/models/cart/CartRepository.scala" />
-      <change beforePath="$PROJECT_DIR$/app/models/category/CategoryRepository.scala" afterPath="$PROJECT_DIR$/app/models/category/CategoryRepository.scala" />
-      <change beforePath="$PROJECT_DIR$/app/models/order/OrderRepository.scala" afterPath="$PROJECT_DIR$/app/models/order/OrderRepository.scala" />
-      <change beforePath="$PROJECT_DIR$/app/models/orderdetails/OrderDetails.scala" afterPath="$PROJECT_DIR$/app/models/orderdetails/OrderDetails.scala" />
-      <change beforePath="$PROJECT_DIR$/app/models/payment/Payment.scala" afterPath="$PROJECT_DIR$/app/models/payment/Payment.scala" />
-      <change beforePath="$PROJECT_DIR$/app/models/product/ProductRepository.scala" afterPath="$PROJECT_DIR$/app/models/product/ProductRepository.scala" />
-      <change beforePath="$PROJECT_DIR$/app/models/review/Review.scala" afterPath="$PROJECT_DIR$/app/models/review/Review.scala" />
-      <change beforePath="$PROJECT_DIR$/app/models/user/User.scala" afterPath="$PROJECT_DIR$/app/models/user/User.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -31,18 +28,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OrderTable.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/order/OrderTable.scala">
+      <file leaf-file-name="OrderDetailsTable.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/orderdetails/OrderDetailsTable.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="22" column="60" lean-forward="true" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDetailsRepository.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/orderdetails/OrderDetailsRepository.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <caret line="18" column="1" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="18" selection-end-column="1" />
+              <folding>
+                <element signature="e#29#68#0" expanded="true" />
+                <element signature="e#484#501#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserTable.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user/UserTable.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cart.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/cart/Cart.scala">
+      <file leaf-file-name="UserRepository.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/user/UserRepository.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="84" lean-forward="false" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
+              <folding>
+                <element signature="e#21#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user/User.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
               <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
@@ -51,52 +83,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Category.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/category/Category.scala">
+      <file leaf-file-name="PaymentTable.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/payment/PaymentTable.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="17" column="50" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="17" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Order.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/order/Order.scala">
+      <file leaf-file-name="PaymentRepository.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/payment/PaymentRepository.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+            <state relative-caret-position="352">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="16" selection-end-column="22" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+                <element signature="e#469#486#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReviewTable.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/review/ReviewTable.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderDetails.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/orderdetails/OrderDetails.scala">
+      <file leaf-file-name="ReviewRepository.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/review/ReviewRepository.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="32" lean-forward="false" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Payment.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/payment/Payment.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/product/Product.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="286">
+              <caret line="13" column="82" lean-forward="true" selection-start-line="13" selection-start-column="82" selection-end-line="13" selection-end-column="82" />
+              <folding>
+                <element signature="e#23#62#0" expanded="true" />
+                <element signature="e#466#483#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,27 +133,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/review/Review.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/user/User.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderDetailsTable.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/orderdetails/OrderDetailsTable.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <caret line="4" column="72" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -176,6 +184,13 @@
         <option value="$PROJECT_DIR$/app/models/payment/Payment.scala" />
         <option value="$PROJECT_DIR$/app/models/review/Review.scala" />
         <option value="$PROJECT_DIR$/app/models/user/User.scala" />
+        <option value="$PROJECT_DIR$/app/models/payment/PaymentTable.scala" />
+        <option value="$PROJECT_DIR$/app/models/payment/PaymentRepository.scala" />
+        <option value="$PROJECT_DIR$/app/models/review/ReviewTable.scala" />
+        <option value="$PROJECT_DIR$/app/models/review/ReviewRepository.scala" />
+        <option value="$PROJECT_DIR$/app/models/orderdetails/OrderDetailsRepository.scala" />
+        <option value="$PROJECT_DIR$/app/models/user/UserTable.scala" />
+        <option value="$PROJECT_DIR$/app/models/user/UserRepository.scala" />
       </list>
     </option>
   </component>
@@ -453,12 +468,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527624597072</updated>
-      <workItem from="1527624598345" duration="6412000" />
+      <workItem from="1527624598345" duration="7207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6412000" />
+    <option name="totallyTimeSpent" value="7207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="-4" width="1853" height="1084" extended-state="6" />
@@ -548,34 +563,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/cart/CartRepository.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="103" lean-forward="false" selection-start-line="10" selection-start-column="103" selection-end-line="10" selection-end-column="103" />
-          <folding>
-            <element signature="e#21#60#0" expanded="true" />
-            <element signature="e#469#486#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/category/CategoryRepository.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="108" lean-forward="false" selection-start-line="10" selection-start-column="108" selection-end-line="10" selection-end-column="108" />
-          <folding>
-            <element signature="e#25#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/order/OrderRepository.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
-            <element signature="e#22#61#0" expanded="true" />
-            <element signature="e#461#478#0" expanded="true" />
+            <element signature="e#22#61#0" expanded="false" />
+            <element signature="e#461#478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,8 +579,8 @@
         <state relative-caret-position="418">
           <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
           <folding>
-            <element signature="e#24#63#0" expanded="true" />
-            <element signature="e#455#472#0" expanded="true" />
+            <element signature="e#24#63#0" expanded="false" />
+            <element signature="e#455#472#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -615,14 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/orderdetails/OrderDetailsTable.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/cart/Cart.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -631,15 +617,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/category/Category.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/order/Order.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="88">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/order/Order.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/product/Product.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
@@ -655,15 +641,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/payment/Payment.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/product/Product.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/category/Category.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
@@ -671,10 +649,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/category/CategoryRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#447#464#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/cart/CartRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#469#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/payment/Payment.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/orderdetails/OrderDetailsTable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="60" lean-forward="true" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/review/Review.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <caret line="4" column="72" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/review/ReviewTable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/payment/PaymentRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#469#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/review/ReviewRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="82" lean-forward="true" selection-start-line="13" selection-start-column="82" selection-end-line="13" selection-end-column="82" />
+          <folding>
+            <element signature="e#23#62#0" expanded="true" />
+            <element signature="e#466#483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/payment/PaymentTable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="50" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="17" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -682,8 +734,37 @@
     <entry file="file://$PROJECT_DIR$/app/models/user/User.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user/UserTable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/orderdetails/OrderDetailsRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#29#68#0" expanded="true" />
+            <element signature="e#484#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user/UserRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="84" lean-forward="false" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
+          <folding>
+            <element signature="e#21#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
