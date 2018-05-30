@@ -5,10 +5,10 @@ import models.SlickRepository
 import play.api.db.slick.DatabaseConfigProvider
 import slick.jdbc.JdbcProfile
 
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)
+class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)(implicit ec: ExecutionContext)
   extends SlickRepository with ProductTable {
 
   protected val dbConfig = dbConfigProvider.get[JdbcProfile]
