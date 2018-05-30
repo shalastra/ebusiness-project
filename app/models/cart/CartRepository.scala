@@ -16,10 +16,13 @@ class CartRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
   import dbConfig._
   import profile.api._
 
-  def create(id: Long, orderId: Long): Future[Cart] = db.run {
+  def create(orderId: Long): Future[Cart] = db.run {
     (cart.map(c => c.orderId)
-      returning cart.map(_.id)
-      into ((orderId, id) => Cart(id, orderId))
+      returning cart.map(_.id) into ((orderId, id) => Cart(id, orderId))
       ) += (orderId)
+  }
+
+  def list(): Future[Seq[Cart]] = db.run {
+    cart.result
   }
 }

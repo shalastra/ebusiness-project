@@ -17,9 +17,9 @@ class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)(imp
   import profile.api._
 
   def create(name: String, description: String, categoryId: Int): Future[Product] = db.run {
-    (product.map(p => (p.name, p.description,p.categoryId))
+    (product.map(p => (p.name, p.description, p.categoryId))
       returning product.map(_.id)
-      into {case ((name,description,categoryId),id) => Product(id,name, description,categoryId)}
+      into {case ((name, description, categoryId), id) => Product(id, name, description, categoryId)}
     ) += (name, description,categoryId)
   }
 
