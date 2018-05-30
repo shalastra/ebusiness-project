@@ -1,4 +1,4 @@
-package models
+package models.order
 
 import javax.inject.{Inject, Singleton}
 import play.api.db.slick.DatabaseConfigProvider
