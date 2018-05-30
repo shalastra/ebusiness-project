@@ -1,8 +1,10 @@
 package models.orderdetails
 
 import models.SlickRepository
+import models.order.OrderTable
+import models.product.ProductTable
 
-trait OrderDetailsTable {
+trait OrderDetailsTable extends OrderTable with ProductTable {
   this: SlickRepository =>
 
   import driver.api._
@@ -14,7 +16,10 @@ trait OrderDetailsTable {
     def quantity = column[Int]("quantity")
     def totalPrice = column[Double]("totalPrice")
     def orderId = column[Long]("orderId")
+    def order_fk = foreignKey("order_fk", orderId, order)(_.id)
     def productId = column[Long]("productId")
+    def product_fk = foreignKey("product_fk", productId, product)(_.id)
+
 
     def * = (id, orderDate, productPrice, quantity, totalPrice,
       orderId, productId) <> ((OrderDetails.apply _).tupled, OrderDetails.unapply)
