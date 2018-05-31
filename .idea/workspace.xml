@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd837394-29c1-4944-a5ca-302a69bbb349" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" />
-    </list>
+    <list default="true" id="fd837394-29c1-4944-a5ca-302a69bbb349" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
     <ignored path="$PROJECT_DIR$/project/target/" />
@@ -421,7 +419,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527624597072</updated>
-      <workItem from="1527624598345" duration="14100000" />
+      <workItem from="1527624598345" duration="14128000" />
     </task>
     <servers />
   </component>
@@ -431,7 +429,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14100000" />
+    <option name="totallyTimeSpent" value="14128000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="-4" width="1853" height="1084" extended-state="6" />
