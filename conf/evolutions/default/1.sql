@@ -1,70 +1,71 @@
-# --- !Ups
 
+# --- !Downs
+drop table "product";
+drop table "category";
+drop table "cart";
+drop table "orderdetails";
+drop table "payment";
+drop table "review";
+drop table "user";
+drop tabless "order";
+
+# --- !Ups
 create table "category" (
   "id" integer not null primary key autoincrement,
-  "name" varchar not null
+  "name" text not null
 );
 
 create table "product" (
   "id" integer not null primary key autoincrement,
-  "name" varchar not null,
+  "name" text not null,
   "description" text not null,
   category int not null,
   foreign key(category) references category(id)
 );
 
 create table "cart" (
-  " ID " INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "orderId" INTEGER NOT NULL,
-  FOREIGN KEY ("orderId") REFERENCES [order](id)
+  "id" integer not null primary key autoincrement,
+  "orderId" integer not null,
+  foreign key ("orderId") references [order](id)
 );
 
-CREATE TABLE "order" (
-  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "orderDate" TEXT NOT NULL,
-  "userId" INTEGER NOT NULL,
-  "paymentId" INTEGER NOT NULL,
-  FOREIGN KEY("userId") REFERENCES [user](id),
-  FOREIGN KEY("paymentId") REFERENCES payment(id)
+create table "order" (
+  "id" integer not null primary key autoincrement,
+  "orderDate" text not null,
+  "userId" integer not null,
+  "paymentId" integer not null,
+  foreign key("userId") references [user](id),
+  foreign key("paymentId") references payment(id)
 );
 
-CREATE TABLE "orderdetails" (
-  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "orderDate" TEXT NOT NULL,
-  "productPrice" REAL NOT NULL,
-  "quantity" INTEGER NOT NULL,
-  "totalPrice" REAL NOT NULL,
-  "orderId" INTEGER NOT NULL,
-  "productId" INTEGER NOT NULL,
-  FOREIGN KEY("orderId") REFERENCES [order](id),
-  FOREIGN KEY("productId") REFERENCES product(id)
+create table "orderdetails" (
+  "id" integer not null primary key autoincrement,
+  "orderDate" text not null,
+  "productPrice" real not null,
+  "quantity" integer not null,
+  "totalPrice" real not null,
+  "orderId" integer not null,
+  "productId" integer not null,
+  foreign key("orderId") references [order](id),
+  foreign key("productId") references product(id)
 );
 
-CREATE TABLE "payment" (
-  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "paymentType" TEXT NOT NULL
+create table "payment" (
+  "id" integer not null primary key autoincrement,
+  "paymentType" text not null
 );
 
-CREATE TABLE "review" (
-  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "grade" INTEGER NOT NULL,
-  "comment" TEXT NOT NULL,
-  "productId" INTEGER NOT NULL,
-  FOREIGN KEY("productId") REFERENCES product(id)
+create table "review" (
+  "id" integer not null primary key autoincrement,
+  "grade" integer not null,
+  "comment" text not null,
+  "productId" integer not null,
+  foreign key("productId") references product(id)
 );
 
-CREATE TABLE "user" (
-  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  "username" TEXT NOT NULL,
-  "password" TEXT NOT NULL
+create table "user" (
+  "id" integer not null primary key autoincrement,
+  "username" text not null,
+  "password" text not null
 );
 
-# --- !Downs
-drop table "product" if exists;
-drop table "category" if exists;
-DROP TABLE "order" if exists;
-DROP TABLE "cart" if exists;
-DROP TABLE "orderdetails" if exists;
-DROP TABLE "payment" if exists;
-DROP TABLE "review" if exists;
-DROP TABLE "user" if exists;

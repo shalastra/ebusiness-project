@@ -12,6 +12,7 @@ libraryDependencies += guice
 libraryDependencies += "com.typesafe.play" %% "play-slick" % "3.0.3"
 libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "3.0.3"
 libraryDependencies += "org.xerial"        %  "sqlite-jdbc" % "3.21.0"
+
 //libraryDependencies += "slick.driver.SQLiteDriver" %%
 
 //libraryDependencies += "com.h2database" % "h2" % "1.4.196"
