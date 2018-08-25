@@ -1,15 +1,5 @@
-
-# --- !Downs
-drop table "product";
-drop table "category";
-drop table "cart";
-drop table "orderdetails";
-drop table "payment";
-drop table "review";
-drop table "user";
-drop tabless "order";
-
 # --- !Ups
+
 create table "category" (
   "id" integer not null primary key autoincrement,
   "name" text not null
@@ -69,3 +59,13 @@ create table "user" (
   "password" text not null
 );
 
+# --- !Downs
+
+drop table "product" if exists;
+drop table "category" if exists;
+drop table "cart" if exists;
+drop table "orderdetails" if exists;
+drop table "payment" if exists;
+drop table "review" if exists;
+drop table "user" if exists;
+drop table "order" if exists;
