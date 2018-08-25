@@ -6,6 +6,9 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.12.6"
 
+resolvers += Resolver.jcenterRepo
+
+resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
 crossScalaVersions := Seq("2.11.12", "2.12.4")
 
 libraryDependencies += guice
@@ -17,6 +20,8 @@ libraryDependencies += "org.xerial"        %  "sqlite-jdbc" % "3.21.0"
 
 //libraryDependencies += "com.h2database" % "h2" % "1.4.196"
 
+TwirlKeys.templateImports := Seq()
 libraryDependencies += specs2 % Test
+libraryDependencies ++= Seq("org.webjars" %% "webjars-play" % "2.6.3")
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
