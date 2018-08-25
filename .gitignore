@@ -5,3 +5,6 @@ target
 .gradle
 
 .idea
+
+ui/node_modules
+
