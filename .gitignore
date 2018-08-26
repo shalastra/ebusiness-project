@@ -3,8 +3,5 @@ logs
 project
 target
 .gradle
-
-.idea
-
 web/node_modules
 
