@@ -16,14 +16,18 @@ class UserRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)(implic
   import dbConfig._
   import profile.api._
 
-  def create(username: String, password: String): Future[User] = db.run {
-    (user.map(p => (p.username, p.password))
+  def create(username: Option[String], email: Option[String], token: String): Future[User] = db.run {
+    (user.map(p => (p.username, p.email, p.token))
       returning user.map(_.id) into {
-      case ((username, password), id) => User(id, username, password)
-    }) += (username, password)
+      case ((username, email, token), id) => User(id, username, email, token)
+    }) += (username, email, token)
   }
 
   def list(): Future[Seq[User]] = db.run {
     user.result
+  }
+
+  def getUserByEmail(email: Option[String]): Future[Option[User]] = db.run {
+    user.filter(_.email === email).result.headOption
   }
 }

@@ -56,7 +56,8 @@ create table "review" (
 create table "user" (
   "id" integer not null primary key autoincrement,
   "username" text not null,
-  "password" text not null
+  "email" text not null,
+  "token" text not null
 );
 
 # --- !Downs

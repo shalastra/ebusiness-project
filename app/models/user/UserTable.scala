@@ -10,10 +10,11 @@ trait UserTable {
 
   protected class UserTable(tag: Tag) extends Table[User](tag, "user") {
     def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
-    def username = column[String]("username")
-    def password = column[String]("password")
+    def username = column[Option[String]]("username")
+    def email = column[Option[String]]("email")
+    def token = column[String]("token")
 
-    def * = (id, username, password) <> ((User.apply _).tupled, User.unapply)
+    def * = (id, username, email, token) <> ((User.apply _).tupled, User.unapply)
   }
 
   protected val user = TableQuery[UserTable]

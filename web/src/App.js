@@ -5,22 +5,18 @@ import Products from './Products'
 import ProductForm from './ProductForm'
 
 class App extends Component {
-  // render() {
-  //   return <Router>
-  //       <div id="menu">
-  //           <ul>
-  //               <li>
-  //                   <Link to="/products">Products</Link>
-  //               </li>
-  //               <li>
-  //                   <Link to="/productadd">Add Product</Link>
-  //               </li>
-  //           </ul>
-  //       <Route path="/products" component={Products}/>
-  //           <Route path="/productadd" component={ProductForm}/>
-  //       </div>
-  //   </Router>
-  // }
+
+    constructor(props) {
+        super(props);
+        this.state = {isLoggedIn: false};
+    }
+
+    componentDidMount() {
+        axios.get('/api/getCurrentUser').then(data => {
+            localStorage.setItem("USER_ID",data.data.name);
+            localStorage.setItem("userToken",data.data.token)
+        });
+    }
 
     render() {
         return <h1>Hello</h1>
