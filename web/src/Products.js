@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Products extends Component {
 
@@ -10,18 +11,11 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        var url = "http://localhost:9090/products"
-
-        fetch(url, {
-            mode: 'cors',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin':'http://localhost:3000',
-            },
-            method: 'GET',
-        })
-            .then(results => {
+        axios.get('http://localhost:9000/products', {
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            }
+        }).then(results => {
                 return results.json();
             }).then(data => {
             let products = data.map((prod) => {

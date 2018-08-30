@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
+import Products from "./Products";
 
 class App extends Component {
 
@@ -26,8 +27,11 @@ class App extends Component {
         }
         return (
             <div className="App">
-                <h1>SKLEP</h1>
-                {login}
+                <div>
+                    <h1>SKLEP</h1>
+                    {login}
+                </div>
+                <Products/>
             </div>
         );
     }

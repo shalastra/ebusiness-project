@@ -9,7 +9,7 @@ create table "product" (
   "id" integer not null primary key autoincrement,
   "name" text not null,
   "description" text not null,
-  category int not null,
+  category int,
   foreign key(category) references category(id)
 );
 
