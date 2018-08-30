@@ -8,6 +8,7 @@ import org.webjars.play.WebJarsUtil
 import play.api.i18n.I18nSupport
 import play.api.mvc.{ AbstractController, AnyContent, ControllerComponents }
 import utils.auth.DefaultEnv
+import play.api.libs.json.Json
 import util.Success
 
 import models.user.UserRepository
@@ -33,14 +34,9 @@ class ApplicationController @Inject() (
                                         assets: AssetsFinder
                                       ) extends AbstractController(components) with I18nSupport {
 
-  /**
-    * Handles the index action.
-    *
-    * @return The result to display.
-    */
-  def index = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
-
-    //addUsertoDB
+  def index = silhouette.SecuredAction.async {
+    implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+      
     val userID = request.identity.userID
     val fullName = request.identity.fullName
     val email = request.identity.email
@@ -56,12 +52,28 @@ class ApplicationController @Inject() (
     Future.successful(Redirect("http://localhost:3000"))
   }
 
-  /**
-    * Handles the Sign Out action.
-    *
-    * @return The result to display.
-    */
-  def signOut = silhouette.SecuredAction.async { implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+  def getCurrentUser = silhouette.SecuredAction.async {
+    implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
+
+    val userID = request.identity.userID
+    val fullName = request.identity.fullName
+    val email = request.identity.email
+    var token = request.authenticator.id
+
+    var json = (Json.obj(
+      "userID" -> userID,
+      "email" -> email,
+      "name" -> fullName,
+      "token" -> token))
+
+    println(json)
+
+    Future.successful(Ok(json))
+
+  }
+
+  def signOut = silhouette.SecuredAction.async {
+    implicit request: SecuredRequest[DefaultEnv, AnyContent] =>
     val result = Redirect(routes.ApplicationController.index())
     silhouette.env.eventBus.publish(LogoutEvent(request.identity, request))
     silhouette.env.authenticatorService.discard(request.authenticator, result)
