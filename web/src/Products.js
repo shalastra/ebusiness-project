@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Table } from 'react-bootstrap';
+import {Button, Table} from 'react-bootstrap';
 
 class Products extends Component {
 
@@ -24,7 +24,11 @@ class Products extends Component {
             return <tr key={product.toString()}>
                 <td>{product.name}</td>
                 <td>{product.description}</td>
-                <td>Buy</td>
+                <td>
+                    <Button bsStyle="primary">
+                        Do koszyka
+                    </Button>
+                </td>
             </tr>;
         });
 

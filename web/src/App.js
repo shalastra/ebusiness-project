@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
 import Products from "./Products";
-import {Nav, Navbar} from "react-bootstrap";
+import {Nav, Navbar, NavItem} from "react-bootstrap";
 
 class App extends Component {
 
@@ -22,9 +22,14 @@ class App extends Component {
         let login;
         var userID = localStorage.getItem("USER_ID");
         if ( userID && userID !== "undefined"){
-            login = <div id={"login_div"}>Zalogowano jako {userID} | <a href='http://localhost:9000/signOut'>Wyloguj</a></div>
+            login = <Nav pullRight>
+                <Navbar.Text>{userID}</Navbar.Text>
+                <NavItem href='http://localhost:9000/signOut'>Wyloguj</NavItem>
+            </Nav>
         } else {
-            login = <a href='http://localhost:9000/signIn'><div id={"login_div"}>Zaloguj</div></a>
+            login = <Nav pullRight>
+                <NavItem href='http://localhost:9000/signIn'>Zaloguj</NavItem>
+            </Nav>
         }
         return (
             <div className="App">
@@ -34,9 +39,15 @@ class App extends Component {
                             <a href="#home">SKLEP</a>
                         </Navbar.Brand>
                     </Navbar.Header>
-                    <Nav pullRight>
-                        {login}
+                    <Nav>
+                        <NavItem>
+                            Dodaj produkt
+                        </NavItem>
+                        <NavItem>
+                            Koszyk
+                        </NavItem>
                     </Nav>
+                    {login}
                 </Navbar>
                 <Products/>
             </div>
