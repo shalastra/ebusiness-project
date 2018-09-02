@@ -2,13 +2,29 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
 import Products from "./Products";
-import {Nav, Navbar, NavItem} from "react-bootstrap";
+import ProductForm from "./ProductForm";
+import {Nav, Navbar, NavItem, Modal} from "react-bootstrap";
 
 class App extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {isLoggedIn: false};
+    constructor(props, context) {
+        super(props, context);
+
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+
+        this.state = {
+            isLoggedIn: false,
+            show: false
+        };
+    }
+
+    handleClose() {
+        this.setState({show: false});
+    }
+
+    handleShow() {
+        this.setState({show: true});
     }
 
     componentDidMount() {
@@ -40,9 +56,18 @@ class App extends Component {
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>
-                        <NavItem>
+                        <NavItem onClick={this.handleShow}>
                             Dodaj produkt
                         </NavItem>
+
+                        <Modal show={this.state.show} onHide={this.handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Dodawanie Produktu</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <ProductForm/>
+                            </Modal.Body>
+                        </Modal>
                         <NavItem>
                             Koszyk
                         </NavItem>
