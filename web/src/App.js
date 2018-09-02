@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
 import Products from "./Products";
+import {Nav, Navbar} from "react-bootstrap";
 
 class App extends Component {
 
@@ -27,10 +28,16 @@ class App extends Component {
         }
         return (
             <div className="App">
-                <div>
-                    <h1>SKLEP</h1>
-                    {login}
-                </div>
+                <Navbar>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="#home">SKLEP</a>
+                        </Navbar.Brand>
+                    </Navbar.Header>
+                    <Nav pullRight>
+                        {login}
+                    </Nav>
+                </Navbar>
                 <Products/>
             </div>
         );

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Table } from 'react-bootstrap';
 
 class Products extends Component {
 
@@ -11,30 +12,29 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:9000/products', {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-            }
-        }).then(results => {
-                return results.json();
+        axios.get('http://localhost:9000/products').then(results => {
+            return results.data;
             }).then(data => {
-            let products = data.map((prod) => {
-                return (
-                    <div key={prod.id}>
-                        <div className="title">{prod.name}</div>
-                        <div>{prod.description}</div>
-                        <div>{prod.category}</div>
-                    </div>
-                )
-            })
-            this.setState({products: products})
+            this.setState({products: data})
         })
     }
 
     render() {
+        var items = this.state.products.map(product => {
+            return <tr key={product.toString()}>
+                <td>{product.name}</td>
+                <td>{product.description}</td>
+                <td>Buy</td>
+            </tr>;
+        });
+
         return (
             <div className="products">
-                {this.state.products}
+                <Table striped bordered condensed hover>
+                    <tbody>
+                    {items}
+                    </tbody>
+                </Table>
             </div>
         )
     }
