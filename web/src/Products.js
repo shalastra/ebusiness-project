@@ -4,8 +4,8 @@ import {Button, Table} from 'react-bootstrap';
 
 class Products extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             products: [],
         };
@@ -19,13 +19,20 @@ class Products extends Component {
         })
     }
 
+    addToCart(id) {
+        console.log(id);
+
+        var selectedProduct = this.state.products.find(selected => selected.id === id);
+        this.props.handleAddToCart(selectedProduct);
+    }
+
     render() {
         var items = this.state.products.map(product => {
             return <tr key={product.toString()}>
                 <td>{product.name}</td>
                 <td>{product.description}</td>
                 <td>
-                    <Button bsStyle="primary">
+                    <Button bsStyle="primary" data={product.id} onClick={() => this.addToCart(product.id)}>
                         Do koszyka
                     </Button>
                 </td>

@@ -17,9 +17,7 @@ class Products extends Component {
             category: 1
         }
 
-        console.log(data);
-
-        axios.post('http://localhost:9090/addProduct/', data);
+        axios.post('http://localhost:9090/addProduct/', data).then(form => console.log("Form sent"));
     }
 
     render() {
@@ -45,17 +43,11 @@ class Products extends Component {
                                      inputRef={(ref) => {this.description = ref}} />
                     </Col>
                 </FormGroup>
-                {/*<label htmlFor="name">Product name</label>*/}
-                {/*<input id="name" name="name" type="text" />*/}
-
-                {/*<label htmlFor="description">Description</label>*/}
-                {/*<input id="description" name="description" type="description" />*/}
-
                 <FormGroup>
                     <Col smOffset={2} sm={10}>
                         <Button type="submit">Dodaj</Button>
                     </Col>
-                </FormGroup>            {/*</form>*/}
+                </FormGroup>
             </Form>
         );
     }

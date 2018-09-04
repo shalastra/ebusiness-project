@@ -3,7 +3,8 @@ import axios from 'axios';
 import './App.css';
 import Products from "./Products";
 import ProductForm from "./ProductForm";
-import {Nav, Navbar, NavItem, Modal} from "react-bootstrap";
+import Cart from "./Cart";
+import {Modal, Nav, Navbar, NavItem} from "react-bootstrap";
 
 class App extends Component {
 
@@ -12,11 +13,23 @@ class App extends Component {
 
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleCloseCart = this.handleCloseCart.bind(this);
+        this.handleShowCart = this.handleShowCart.bind(this);
 
         this.state = {
             isLoggedIn: false,
-            show: false
+            show: false,
+            showCart: false,
+            selectedProducts: []
         };
+    }
+
+    handleAddToCart(selectedProduct){
+        console.log(selectedProduct);
+
+        if(!this.state.selectedProducts.some(product => product.name === selectedProduct.name)) {
+            this.state.selectedProducts.push(selectedProduct);
+        }
     }
 
     handleClose() {
@@ -25,6 +38,14 @@ class App extends Component {
 
     handleShow() {
         this.setState({show: true});
+    }
+
+    handleCloseCart() {
+        this.setState({showCart: false});
+    }
+
+    handleShowCart() {
+        this.setState({showCart: true});
     }
 
     componentDidMount() {
@@ -36,13 +57,18 @@ class App extends Component {
 
     render() {
         let login;
+        let cart;
         var userID = localStorage.getItem("USER_ID");
         if ( userID && userID !== "undefined"){
+            cart = (<NavItem onClick={this.handleShowCart}>
+                    Koszyk
+                </NavItem>);
             login = <Nav pullRight>
                 <Navbar.Text>{userID}</Navbar.Text>
                 <NavItem href='http://localhost:9000/signOut'>Wyloguj</NavItem>
             </Nav>
         } else {
+            cart = (<div></div>);
             login = <Nav pullRight>
                 <NavItem href='http://localhost:9000/signIn'>Zaloguj</NavItem>
             </Nav>
@@ -68,13 +94,21 @@ class App extends Component {
                                 <ProductForm/>
                             </Modal.Body>
                         </Modal>
-                        <NavItem>
-                            Koszyk
-                        </NavItem>
+
+                        {cart}
+
+                        <Modal show={this.state.showCart} onHide={this.handleCloseCart}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Koszyk</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <Cart data={this.state.selectedProducts}/>
+                            </Modal.Body>
+                        </Modal>
                     </Nav>
                     {login}
                 </Navbar>
-                <Products/>
+                <Products handleAddToCart={this.handleAddToCart.bind(this)} />
             </div>
         );
     }
