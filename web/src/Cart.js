@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Table} from "react-bootstrap";
+import {Button, Table} from "react-bootstrap";
 
 class Cart extends Component {
 
@@ -24,6 +24,11 @@ class Cart extends Component {
             selectedProducts = this.state.selectedProducts.map(product => {
                 return <tr key={product.toString()}>
                     <td>{product.name}</td>
+                    <td>
+                        <Button bsStyle="danger" data={product.id} onClick={() => this.removeProduct(product)}>
+                            Usuń
+                        </Button>
+                    </td>
                 </tr>;
             });
         }

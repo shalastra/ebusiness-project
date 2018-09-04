@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Button, Table} from 'react-bootstrap';
+import './Products.css';
+import {Button, Table, Grid, Row, Col} from 'react-bootstrap';
 
 class Products extends Component {
 
@@ -41,11 +42,21 @@ class Products extends Component {
 
         return (
             <div className="products">
-                <Table striped bordered condensed hover>
-                    <tbody>
-                    {items}
-                    </tbody>
-                </Table>
+                <Grid>
+                    <Row>
+                        <Col xs={4} md={2}>
+                        </Col>
+                        <Col xs={4} md={8}>
+                            <Table striped bordered condensed hover>
+                                <tbody>
+                                {items}
+                                </tbody>
+                            </Table>
+                        </Col>
+                        <Col xsHidden md={2}>
+                        </Col>
+                    </Row>
+                </Grid>
             </div>
         )
     }
