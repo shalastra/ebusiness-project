@@ -15,6 +15,12 @@ class Cart extends Component {
         this.setState({selectedProducts: this.props.data});
     }
 
+    removeProduct(productToRemove) {
+        var remainingProducts = this.state.selectedProducts
+            .filter(product => product.id !== productToRemove.id);
+        this.setState({selectedProducts: remainingProducts});
+    }
+
     render() {
         let selectedProducts;
 
